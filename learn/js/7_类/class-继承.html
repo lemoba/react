@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类</title>
+    <script>
+
+        class Animal {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            sayHello = () => {
+                console.log("动物在叫");
+            }
+        }
+        class Dog extends Animal {
+            // 重写
+            sayHello = () => {
+                console.log("Dog在叫");
+            }
+        }
+
+        class Snake extends Animal {
+            constructor(name, age, length) {
+                super(name, age); // 调用父类构造函数
+                this.length = length;
+            }
+            sayHello = () => {
+                console.log("Snake在叫");
+            }
+        }
+
+        const dog = new Dog('旺财', 5)
+        const snake = new Snake(12, '蛇', 1)
+        console.log(dog.name, dog.age);
+        console.log(snake.name, snake.age);
+        dog.sayHello()
+        snake.sayHello()
+    </script>
+</head>
+<body>
+
+</body>
+</html>

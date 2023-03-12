@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导出</title>
+    <!--默认情况下， script标签不能使用import语句，
+        如果想让其支持模块化，必须设置script的type属性为module
+    -->
+    <script type="module">
+      // 导入export模块中的默认模块
+      // import a from './export.js'
+      // console.log(a);
+
+      // 命名导入
+      //import {b as hello, c, obj, fn} from './export.js'
+      import a, {b as hello, c, obj, fn} from './export.js'
+      console.log(hello, c, obj);
+      fn("hello js")
+    </script>
+</head>
+<body>
+
+</body>
+</html>

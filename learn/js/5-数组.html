@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数的特点</title>
+    <script>
+        const arr = [1, 2, 3, 4, 5]
+
+        /**
+         * map()
+         *  - 可以根据原有数组返回一个新数组
+         *  - 需要一个回调函数作为函数，回调函数的返回值会成为新数组中的元素
+         *  - 回调函数中有三个参数:
+         *      第一个参数：当前元素
+         *      第二个参数：当前元素的索引
+         *      第三个参数：当前数组
+         *
+         * filter()
+         *   - 过滤, true保留 false不保留
+         *
+         * find()
+         *   - 可以从一个数组中获得符合条件的第一个元素
+         *
+         * reduce()
+         *   - 合并数组中的元素
+         *   - 需要两个函数
+         *       回调函数
+         *          prev 上一次运算结果
+         *          curr 当前值
+         *          index 当前索引
+         *          arr 当前数组
+         *       初始值
+         */
+        let res = arr.map((item) => item + 2)
+
+        res = arr.map((item, index, array) => {
+            console.log(item, index, array);
+        })
+
+        res = arr.filter(item => item % 2 == 0);
+        res = arr.find(item => item % 2 == 0);
+        res = arr.reduce((prev, curr) => {
+            return prev + curr
+        }, 31); // 指定初始值
+        console.log(res)
+    </script>
+</head>
+<body>
+</body>
+</html>

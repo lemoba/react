@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类</title>
+    <script>
+        /**
+         * 类
+         *  - 类是对象的模版
+         *  - 类决定了一个对象中有哪些属性和方法
+         *  - 使用class关键字来定义一个类
+         */
+        class Person {
+            // 定义属性
+            // name = '孙悟空';
+            // age = 18;
+
+            // 构造函数
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            // 定义方法
+            run() {
+                console.log("run!!")
+            }
+            getName() {
+                console.log(this.name);
+            }
+            getAge() {
+                console.log(this.age);
+            }
+        }
+
+        // const per = new Person();
+        // const per2 = new Person();
+        // console.log(per);
+        // console.log(per2);
+        // console.log(per2.run());
+        // console.log(per == per2);
+        const per = new Person('孙悟空', 19);
+        const per2 = new Person('猪八戒', 29);
+        per.getName()
+        per.getAge()
+    </script>
+</head>
+<body>
+
+</body>
+</html>
