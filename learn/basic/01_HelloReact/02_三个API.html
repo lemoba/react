@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+<!--引入react核心库-->
+<script src="script/react.development.js"></script>
+<script src="script/react-dom.development.js"></script>
+<!--引入react的DOM库-->
+<script>
+
+  const button = React.createElement('button', {}, '点我!')
+
+  // 获取根元素对应的react元素
+  const root = ReactDOM.createRoot(document.getElementById('root'))
+
+  // 将元素渲染到根元素中
+  root.render(button)
+</script>
+</body>
+</html>
