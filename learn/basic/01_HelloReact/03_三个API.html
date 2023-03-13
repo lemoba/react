@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+<!--引入react核心库-->
+<script src="script/react.development.js"></script>
+<script src="script/react-dom.development.js"></script>
+<!--引入react的DOM库-->
+<script>
+    const button = React.createElement('button', {
+        id:'btn',
+        type:'button',
+        className:'btn',
+        onClick: () => {
+            alert('点我！')
+        }
+    }, '点我!')
+
+    // 创建一个div
+    const div = React.createElement('div', {}, '我是div2', button)
+    // 获取根元素对应的react元素
+    const root = ReactDOM.createRoot(document.getElementById('root'))
+    // 将元素渲染到根元素中
+    root.render(div)
+    /**
+     * root.render()
+     *      - 用来将react元素渲染到根元素中
+     *      - 跟元素中所有的内容都会被删除，被React元素所替换
+     *      - 当重复调用render()时，react会将两次的渲染结果进行比较
+     *          - 它确保只修改变化的元素
+     */
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+<!--引入react核心库-->
+<script src="script/react.development.js"></script>
+<script src="script/react-dom.development.js"></script>
+<script src="script/babel.min.js"></script>
+<!--引入react的DOM库-->
+<script type="text/babel">
+    // 命令式编程
+    // const button = React.createElement('button', {})
+
+    // 声明式编程
+    // 在React中可以通过JSX来创建React元素
+    // 在React使用JSX, 必须使用babel
+    const button = <button>我是按钮</button>
+    const root = ReactDOM.createRoot(document.getElementById('root'))
+    root.render(button)
+</script>
+</body>
+</html>

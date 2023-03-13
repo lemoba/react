@@ -5,20 +5,61 @@
     <title>Title</title>
 </head>
 <body>
+<button id='btn'>我是一个按钮</button>
 <div id="root"></div>
 <!--引入react核心库-->
 <script src="script/react.development.js"></script>
 <script src="script/react-dom.development.js"></script>
 <!--引入react的DOM库-->
 <script>
+    /**
+     * React.createElement()
+     *  - 用来创建一个React元素
+     *  - 参数：
+     *      1. 元素名称(html标签必须为小写)
+     *      2. 标签中的属性
+     *          - 在设置事件时,属性名需要修改为驼峰命名法
+     *      3. 元素的内容(子内容)
+     *
+     *  - 注意点：
+     *      React元素最终会通过虚拟DOM转换为真实的DOM元素
+     *      React元素一旦创建就无法修改, 只能通过新创建的元素进行替换
+     *
+     */
+    const button = React.createElement('button', {
+        id:'btn',
+        type:'button',
+        className:'btn',
+        onClick: () => {
+            alert('点我！')
+        }
+    }, '点我!')
 
-  const button = React.createElement('button', {}, '点我!')
+    // 创建一个div
+    const div = React.createElement('div', {}, '我是div', button)
+    // 获取根元素对应的react元素
+    const root = ReactDOM.createRoot(document.getElementById('root'))
+    // 将元素渲染到根元素中
+    root.render(div)
 
-  // 获取根元素对应的react元素
-  const root = ReactDOM.createRoot(document.getElementById('root'))
+    const btn = document.getElementById('btn')
+    btn.addEventListener('click', () => {
+        // 点击按钮后, 修改div中的button的文字为click me
+        const button = React.createElement('button', {
+            id:'btn',
+            type:'button',
+            className:'btn',
+            onClick: () => {
+                alert('点我！')
+            }
+        }, 'click me')
 
-  // 将元素渲染到根元素中
-  root.render(button)
+        // 创建一个div
+        const div = React.createElement('div', {}, '我是div', button)
+        // 重新对根元素进行渲染
+        // 当调用render react会自动比较两次渲染的元素，只在真实DOM中更新变化的部分
+        root.render(div)
+    })
 </script>
 </body>
 </html>
